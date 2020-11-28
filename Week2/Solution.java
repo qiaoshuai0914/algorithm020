@@ -102,6 +102,7 @@ public class Solution {
             for (int i = 0; i < size; i++) {
                 Node node = queue.poll;
                 temp.add(node.val);
+                //如果是二叉输 可以改下面
                 List<Node> nodeList = node.children();
                 while (List < Node > node :nodeList){
                     queue.add(node);
