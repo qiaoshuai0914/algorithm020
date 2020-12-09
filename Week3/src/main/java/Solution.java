@@ -1,7 +1,15 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Solution {
+    class TreeNode{
+        TreeNode left;
+        TreeNode right;
+        Integer val;
+    }
     //二叉树的最近公共祖先 1，、.递归实现
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        TreeNode result ;
+        TreeNode result = new TreeNode();
         dfs(root, p, q,result);
         return result;
     }
@@ -24,7 +32,7 @@ public class Solution {
     //全排列问题
     public List<List<Integer>> permute(int[] nums) {
 
-        List<List<Integer>> res = new ArrayList<>();
+        List<List<Integer>> res = new ArrayList();
         int[] visited = new int[nums.length];
         backtrack(res, nums, new ArrayList<Integer>(), visited);
         return res;
@@ -33,7 +41,7 @@ public class Solution {
 
     private void backtrack(List<List<Integer>> res, int[] nums, ArrayList<Integer> tmp, int[] visited) {
         if (tmp.size() == nums.length) {
-            res.add(new ArrayList<>(tmp));
+            res.add(new ArrayList(tmp));
             return;
         }
         for (int i = 0; i < nums.length; i++) {

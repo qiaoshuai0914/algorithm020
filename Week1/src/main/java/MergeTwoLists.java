@@ -9,6 +9,10 @@
  * }
  */
 public class MergeTwoLists {
+    class ListNode{
+        public int val;
+        public ListNode next;
+    }
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
 
         if(l1==null){
