@@ -1,6 +1,5 @@
+public class ZeroMoreSolution {
 
-/* 283. 移动零 */
-public class ZeroMore{
     public void zeroMore(int[] nums){
         int i = 0;
         int j = 0;
@@ -11,7 +10,7 @@ public class ZeroMore{
                     j++;
                 }else{
                     int temp = nums[i];
-                    mums[j]=temp;
+                    nums[j]=temp;
                     nums[i]=0;
                     j++;
                 }
@@ -20,5 +19,4 @@ public class ZeroMore{
         }
 
     }
-
 }
