@@ -12,7 +12,7 @@ public class Solution {
      * @param x
      * @return
      */
-    public int mySqrt1(int x) {
+    public int mySqrt_1(int x) {
         int left = 0;
         int right = x;
         int result = -1;
@@ -32,6 +32,25 @@ public class Solution {
 
     }
 
+    public int mySqrt_2(int x) {
+        if (x == 0 || x == 1) {
+            return x;
+        }
+        long left = 1, right = x;
+        long mid = 1;
+        while (left <= right) {
+            mid = left + (right - left) / 2;
+            if (mid * mid > x) {
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+
+        }
+        //注意这里返回的是right；
+        return (int) right;
+    }
+
     /**
      * 牛顿迭代
      * 复杂度O()：时间复杂度是O(logx)， 应该比二分查找更快
@@ -40,7 +59,7 @@ public class Solution {
      * @param x
      * @return
      */
-    public int mySqrt2(int x) {
+    public int mySqrt_3(int x) {
         if (x == 0) {
             return 0;
         }
@@ -64,7 +83,7 @@ public class Solution {
      * @param a
      * @return
      */
-    public int mySqrt3(int a) {
+    public int mySqrt_4(int a) {
         long x = a;
         while (x * x > a) {
             x = (x + a / x) / 2;
@@ -75,7 +94,7 @@ public class Solution {
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-        int res = solution.mySqrt3(8);
+        int res = solution.mySqrt_4(8);
         System.out.println(res);
     }
 }
