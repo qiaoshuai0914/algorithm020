@@ -1,4 +1,4 @@
-public class Solution {
+public class Solution_1 {
     /**
      * leetcode 69. x 的平方根
      * 方法一：二分查找
@@ -93,8 +93,8 @@ public class Solution {
 
 
     public static void main(String[] args) {
-        Solution solution = new Solution();
-        int res = solution.mySqrt_4(8);
+        Solution_1 solution1 = new Solution_1();
+        int res = solution1.mySqrt_4(8);
         System.out.println(res);
     }
 }
