@@ -32,6 +32,11 @@ public class Solution_1 {
 
     }
 
+    /**
+     * 方法一：二分查找（2）
+     * @param x
+     * @return
+     */
     public int mySqrt_2(int x) {
         if (x == 0 || x == 1) {
             return x;
@@ -49,30 +54,6 @@ public class Solution_1 {
         }
         //注意这里返回的是right；
         return (int) right;
-    }
-
-    /**
-     * 牛顿迭代
-     * 复杂度O()：时间复杂度是O(logx)， 应该比二分查找更快
-     * 空间复杂度是O(1)；
-     *
-     * @param x
-     * @return
-     */
-    public int mySqrt_3(int x) {
-        if (x == 0) {
-            return 0;
-        }
-
-        double C = x, x0 = x;
-        while (true) {
-            double xi = 0.5 * (x0 + C / x0);
-            if (Math.abs(x0 - xi) < 1e-7) {
-                break;
-            }
-            x0 = xi;
-        }
-        return (int) x0;
     }
 
     /**

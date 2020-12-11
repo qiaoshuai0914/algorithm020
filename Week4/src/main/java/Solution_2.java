@@ -12,7 +12,7 @@ public class Solution_2 {
     public int findMin(int[] nums) {
         int left = 0;
         int right = nums.length - 1;
-        //不能包含等于 证明如果等于
+        //不能包含等于 证明如果等于。则不会有正确结果，要么死循环 要么结果不对；
         //二分搜索  边界问题1。数组长度为0 或者1 2的时候
         // 2 。 left = right时候
         // 3。while循环里面if条件==时候
