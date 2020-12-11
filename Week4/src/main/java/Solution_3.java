@@ -10,28 +10,29 @@ import java.util.Queue;
 public class Solution_3 {
     /**
      * 广度优先搜索遍历二叉树就是层级遍历
+     *
      * @param root
      * @return
      */
     public List<List<Integer>> levelOrderBfs(TreeNode root) {
-        List<List<Integer>>  result = new ArrayList<>();
+        List<List<Integer>> result = new ArrayList<>();
         Queue<TreeNode> queue = new LinkedList();
         queue.add(root);
-        while (!queue.isEmpty()){
-            List<Integer>  temp = new ArrayList<>();
+        while (!queue.isEmpty()) {
+            List<Integer> temp = new ArrayList<>();
             int size = queue.size();
-            for(int i = 0;i<size;i++){
-                TreeNode treeNode =queue.remove();
+            for (int i = 0; i < size; i++) {
+                TreeNode treeNode = queue.remove();
                 temp.add(treeNode.val);
-                if(treeNode.left !=null){
+                if (treeNode.left != null) {
                     queue.add(treeNode.left);
                 }
-                if( treeNode.right!=null){
+                if (treeNode.right != null) {
                     queue.add(treeNode.right);
                 }
             }
         }
-        return  result;
+        return result;
     }
 
     /**
@@ -42,23 +43,22 @@ public class Solution_3 {
      * @param root
      * @param level
      */
-    public void levelOrderDfs( List<List<Integer>> result,TreeNode root,Integer level) {
+    public void levelOrderDfs(List<List<Integer>> result, TreeNode root, Integer level) {
 
-        if(root==null){
-            return ;
+        if (root == null) {
+            return;
         }
-        if(result.get(level)==null){
+        if (result.get(level) == null) {
             result.add(new ArrayList<>());
         }
         result.get(level).add(root.val);
-        levelOrderDfs(result,root.left,level+1);
-        levelOrderDfs(result,root.right,level+1);
+        levelOrderDfs(result, root.left, level + 1);
+        levelOrderDfs(result, root.right, level + 1);
 
     }
 
 
-
-    class TreeNode{
+    class TreeNode {
         TreeNode left;
         TreeNode right;
         int val;

@@ -34,6 +34,7 @@ public class Solution_1 {
 
     /**
      * 方法一：二分查找（2）
+     *x的平方根问题；
      * @param x
      * @return
      */
@@ -42,15 +43,15 @@ public class Solution_1 {
             return x;
         }
         long left = 1, right = x;
-        long mid = 1;
+        //while 终止条件是 left》right   ；所以返回小的 right；
+        //因为是闭区间，所以【x,x】也是一种情况 所以要考虑 所以有等于；
         while (left <= right) {
-            mid = left + (right - left) / 2;
+            long mid = left + (right - left) / 2;
             if (mid * mid > x) {
                 right = mid - 1;
             } else {
                 left = mid + 1;
             }
-
         }
         //注意这里返回的是right；
         return (int) right;
